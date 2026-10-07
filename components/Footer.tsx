@@ -3,7 +3,7 @@
 import { useLanguage } from '@/lib/i18n-context';
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const year = new Date().getFullYear();
 
   return (
@@ -17,7 +17,9 @@ export function Footer() {
               page
             </span>
             <span className="text-neutral-600 ml-1">•</span>
-            <span className="text-xs text-neutral-400">RPM Kurikulum Merdeka AI</span>
+            <span className="text-xs text-neutral-400">
+              {lang === 'id' ? 'Kecerdasan Operasional Finansial & Treasury' : 'Financial Intelligence & Treasury Operations'}
+            </span>
           </div>
 
           <div className="flex flex-wrap items-center gap-6 text-xs text-neutral-400">
@@ -30,6 +32,9 @@ export function Footer() {
             <a href="#contact" className="hover:text-white transition-colors">
               {t.footer.links.contact}
             </a>
+            <a href="#specs" className="hover:text-white transition-colors">
+              {lang === 'id' ? 'Portal Keamanan' : 'Security Portal'}
+            </a>
           </div>
         </div>
 
@@ -39,7 +44,7 @@ export function Footer() {
             {t.footer.copyright.replace('{year}', year.toString())}
           </p>
           <p>
-            Indonesia • Rezpage Educational Technology
+            {lang === 'id' ? 'Global • Rezpage Financial Technologies Inc.' : 'Global • Rezpage Financial Technologies Inc.'}
           </p>
         </div>
       </div>

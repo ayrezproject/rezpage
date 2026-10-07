@@ -1,37 +1,46 @@
 'use client';
 
 import Image from 'next/image';
-import { ChevronRight, Cpu, Users, FileCheck } from 'lucide-react';
+import { ChevronRight, DollarSign, CreditCard, LineChart } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
+import { useLanguage } from '@/lib/i18n-context';
 
 export function FeaturesSection() {
+  const { lang } = useLanguage();
+
   const features = [
     {
-      badge: 'Multi-LLM Engine',
-      title: 'Multi-LLM Educational AI Engine (Gemini, DeepSeek & GPT-4o)',
-      tagline: 'Kecerdasan Artifisial Tingkat Tinggi yang Memahami Naskah Akademik Indonesia',
-      desc: 'Didukung mesin multi-provider dengan auto-failover otomatis. Merumuskan Tujuan Pembelajaran (TP) dan Alur Tujuan Pembelajaran (ATP) dengan taksonomi Bloom yang tepat sasaran tanpa halusinasi.',
-      image: '/images/promosi/ai_generator_feature_1791261047986.jpg',
-      icon: Cpu,
-      footerNote: 'Bahasa Akademis Baku Kemendikbudristek RI',
+      badge: lang === 'id' ? 'Treasury Global' : 'Global Treasury',
+      title: lang === 'id' ? 'Manajemen Multi-Valuta & Rekonsiliasi Otomatis' : 'Multi-Currency Treasury & Continuous Reconciliation',
+      tagline: lang === 'id' ? 'Visibilitas Kas Global Real-Time di Seluruh Entitas' : 'Real-time multi-entity cash visibility across all operating banks',
+      desc: lang === 'id' 
+        ? 'Konsolidasikan rekening USD, EUR, GBP, IDR, dan SGD dalam satu dasbor. Algoritma auto-sweep memindahkan saldo idle ke rekening imbal hasil tinggi secara otomatis.'
+        : 'Consolidate USD, EUR, GBP, IDR, and SGD accounts into a unified ledger. Intelligent auto-sweep protocols maximize yield while maintaining sub-second liquidity.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      icon: DollarSign,
+      footerNote: lang === 'id' ? 'Sinkronisasi Otomatis 0.2 Detik' : 'Sub-Second 0.2s API Sync',
     },
     {
-      badge: 'Pedagogi Berdiferensiasi',
-      title: 'Otomasi Pembelajaran Berdiferensiasi & Profil Siswa',
-      tagline: 'Wujudkan Pembelajaran yang Berpusat pada Murid Tanpa Ribet',
-      desc: 'Otomatis memetakan tingkat kesiapan belajar (scaffolding & pengayaan), 3 gaya belajar (visual, auditori, kinestetik), dan 8 Dimensi Profil Lulusan (DPL 1–8).',
-      image: '/images/promosi/differentiated_learning_1791261072471.jpg',
-      icon: Users,
-      footerNote: 'Profil Lulusan DPL 1–8 Terintegrasi',
+      badge: lang === 'id' ? 'Kartu & Pengeluaran' : 'Spend Governance',
+      title: lang === 'id' ? 'Kartu Korporat Pintar & Kebijakan Belanja Otonom' : 'Autonomous Corporate Cards & Policy-Driven Approvals',
+      tagline: lang === 'id' ? 'Hentikan Pengeluaran Liar Sebelum Terjadi' : 'Eliminate out-of-policy expenses before transactions settle',
+      desc: lang === 'id'
+        ? 'Terbitkan kartu virtual dan fisik dengan batas dinamis per divisi atau vendor. Kuitansi dicocokkan otomatis via AI OCR tanpa entri data manual.'
+        : 'Issue virtual and physical corporate cards with merchant-level limits. Receipts are automatically matched and OCR-extracted with zero manual paperwork.',
+      image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=800&auto=format&fit=crop',
+      icon: CreditCard,
+      footerNote: lang === 'id' ? 'Kepatuhan Belanja 100% Terjaga' : '100% Policy Compliance Guaranteed',
     },
     {
-      badge: 'Format Baku F4',
-      title: 'Ekspor Word (.docx) Format Baku F4 / Folio & Siap Cetak',
-      tagline: 'Bebas Stres Mengatur Margin. Sekali Klik, Langsung Print!',
-      desc: 'Engine pembuat berkas python-docx berpresisi tinggi mempertahankan matriks resmi 54 baris × 15 kolom, lengkap dengan lembar pengesahan tanda tangan kepala sekolah dan NIP.',
-      image: '/images/promosi/f4_export_preview_1791261089569.jpg',
-      icon: FileCheck,
-      footerNote: '100% Kompatibel Microsoft Word & F4 Folio',
+      badge: lang === 'id' ? 'Proyeksi Runway' : 'Predictive Runway',
+      title: lang === 'id' ? 'Prakiraan Arus Kas AI & Deteksi Anomali Pengeluaran' : 'AI-Driven Cash Flow Forecasting & Anomaly Alerts',
+      tagline: lang === 'id' ? 'Laporan Dewan Direksi Siap Pakai Kapan Saja' : 'Board-ready runway modeling with Monte Carlo simulations',
+      desc: lang === 'id'
+        ? 'Simulasikan skenario hiring, ekspansi pasar, dan pelunasan piutang secara matematis. Dapatkan peringatan instan jika ada lonjakan biaya server atau SaaS yang tidak wajar.'
+        : 'Model headcount expansion, revenue churn, and tax obligations under various macro scenarios. Detect unusual vendor billing spikes instantly before month-end.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
+      icon: LineChart,
+      footerNote: lang === 'id' ? 'Model Monte Carlo Akurat 99.4%' : '99.4% Forecast Precision',
     },
   ];
 
@@ -43,20 +52,22 @@ export function FeaturesSection() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
             <div>
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#121316] text-[#c8f53a] text-xs font-bold mb-3">
-                Fitur Unggulan Revolusioner
+                {lang === 'id' ? 'Arsitektur Finansial Modern' : 'Core Financial Architecture'}
               </span>
               <h2 className="text-feature-heading text-[#121316]">
-                Teknologi yang Bekerja untuk Pendidik.
+                {lang === 'id' ? 'Kecerdasan yang Bekerja untuk Tim Finance.' : 'Intelligence Built for Financial Leaders.'}
               </h2>
               <p className="text-body-clean text-sm mt-2 max-w-xl">
-                Setiap detail dirancang untuk menyelesaikan beban administrasi dan menghadirkan standar mutu terbaik di ruang kelas.
+                {lang === 'id'
+                  ? 'Setiap modul dirancang untuk menyingkirkan gesekan administrasi dan memberikan kepastian neraca real-time.'
+                  : 'Engineered to eliminate closing friction, stop unauthorized burn, and provide single-source financial truth.'}
               </p>
             </div>
             <a
               href="#pricing"
               className="link-highlight text-sm font-semibold shrink-0"
             >
-              <span>Lihat paket berlangganan</span>
+              <span>{lang === 'id' ? 'Lihat opsi paket' : 'View pricing tiers'}</span>
               <ChevronRight className="h-4 w-4" />
             </a>
           </div>
@@ -75,6 +86,7 @@ export function FeaturesSection() {
                       src={item.image}
                       alt={item.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-3 left-3 bg-[#121316]/85 backdrop-blur-xs text-[#c8f53a] text-[10px] font-bold px-2.5 py-1 rounded-md">
@@ -87,7 +99,7 @@ export function FeaturesSection() {
                     <div>
                       <div className="flex items-center gap-2 text-xs font-bold text-neutral-500 uppercase tracking-wider mb-2">
                         <Icon className="h-3.5 w-3.5 text-[#121316]" />
-                        <span>Fitur {idx + 1}</span>
+                        <span>{lang === 'id' ? `Modul ${idx + 1}` : `Module 0${idx + 1}`}</span>
                       </div>
                       <h3 className="text-lg font-bold text-[#121316] tracking-tight mb-2 leading-snug">
                         {item.title}

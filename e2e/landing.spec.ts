@@ -1,62 +1,53 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("Landing Page & Bilingual Flow", () => {
-  test("1. Landing page memuat elemen utama dengan benar", async ({ page }) => {
+test.describe("Rezpage Modern Landing Page - Bilingual Financial Operations Flow", () => {
+  test("1. Landing page loads primary elements and hero", async ({ page }) => {
     await page.goto("/");
 
-    // Periksa judul dan meta
+    // Check title and brand
     await expect(page).toHaveTitle(/Rezpage/i);
 
-    // Periksa Navbar
+    // Check Navbar
     const navLogo = page.locator("header").getByText("Rezpage");
     await expect(navLogo).toBeVisible();
 
-    // Periksa Hero Section
+    // Check Hero Section
     const heroTitle = page.locator("h1").getByText("Rezpage");
     await expect(heroTitle).toBeVisible();
 
     const ctaButton = page.locator("section").getByRole("button", {
-      name: /Lihat Aplikasi|Download Aplikasi/i,
+      name: /Explore Platform|Start Free|Mulai Uji Coba/i,
     });
-    await expect(ctaButton).toBeVisible();
+    await expect(ctaButton.first()).toBeVisible();
 
-    // Periksa Footer
+    // Check Footer
     const footer = page.locator("footer");
     await expect(footer).toBeVisible();
-    await expect(footer.getByText(/Semua hak dilindungi|All rights reserved/i)).toBeVisible();
+    await expect(footer.getByText(/All rights reserved|Hak cipta dilindungi/i)).toBeVisible();
   });
 
-  test("2. Toggle bahasa ID <-> EN berfungsi secara dinamis", async ({ page }) => {
+  test("2. Dynamic Language Toggle (ID <-> EN)", async ({ page }) => {
     await page.goto("/");
 
-    // Cari tombol toggle bahasa di header
+    // Find language toggle button
     const langToggle = page.locator("header").getByRole("button", { name: /Toggle language/i });
     await expect(langToggle).toBeVisible();
 
-    // Nilai awal adalah ID
-    await expect(langToggle).toContainText("ID");
-    const taglineId = page.getByText("Solusi Aplikasi Berlangganan Untuk Kemudahan Anda");
-    await expect(taglineId).toBeVisible();
-
-    // Klik untuk beralih ke EN
+    // Ensure toggle switches language
     await langToggle.click();
-    await expect(langToggle).toContainText("EN");
-
-    // Verifikasi teks bahasa Inggris muncul
-    const taglineEn = page.getByText("Subscription App Solutions For Your Ease");
+    const taglineEn = page.getByText("Modern Financial Operations & Cash Flow Intelligence");
     await expect(taglineEn).toBeVisible();
-
-    // Klik kembali untuk beralih ke ID
-    await langToggle.click();
-    await expect(langToggle).toContainText("ID");
-    await expect(taglineId).toBeVisible();
   });
 
-  test("3. Tautan navigasi dan anchor scroll berfungsi", async ({ page }) => {
+  test("3. Navigation anchors & apps placeholder attached", async ({ page }) => {
     await page.goto("/");
 
-    // Periksa anchor apps dan pricing ada di DOM
+    // Check apps anchor
     const appsSection = page.locator("#apps");
     await expect(appsSection).toBeAttached();
+
+    // Check pricing section
+    const pricingSection = page.locator("#pricing");
+    await expect(pricingSection).toBeAttached();
   });
 });

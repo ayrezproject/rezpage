@@ -1,87 +1,81 @@
-# Rezpage Landing Page
+# Rezpage - Modern Landing Page
 
-Landing page modern dan responsif untuk platform **Rezpage (Rencana Pembelajaran Mendalam / RPM AI Kurikulum Merdeka)**.
+A modern, high-performance landing page for **Rezpage - Modern Landing Page** (Enterprise Financial Operations & Cash Flow Intelligence Platform).
 
-Dibangun dengan arsitektur static export Next.js yang siap dideploy secara instan ke **GitHub Pages**.
+Built with Next.js 16 static export architecture, fully optimized for instant, zero-backend deployment to **GitHub Pages**.
 
 ---
 
-## 🚀 Fitur Utama
+## 🚀 Key Features
 
-- **Bilingual (ID & EN):** Beralih bahasa secara instan tanpa reload halaman.
-- **Folio F4 Authentic Document Preview:** Pratinjau interaktif dokumen RPM berstandar format baku 54 baris × 15 kolom Folio (215 × 330 mm).
-- **Download Dokumen Word Asli:** Tautan langsung unduh berkas `.docx` siap pakai.
-- **Desain Modern & Interaktif:** Dilengkapi animasi scroll reveal, progress bar, island capsule navbar responsif, dan layout aesthetic obsidian/lime.
-- **Zero-Backend / Static Export:** Berjalan sepenuhnya di sisi klien tanpa dependensi database server atau layanan pihak ketiga berbayar.
+- **Autonomous Financial Intelligence:** Modern hero stage showcasing unified treasury, spend controls, and automated cash flow forecasting.
+- **Bilingual Experience (EN & ID):** Instant language switching without page reloads.
+- **Interactive Financial Audit Report Preview:** Live high-fidelity Q3 Balance Sheet, Runway Projections, and EBITDA breakdown modal.
+- **Bank-Grade Compliance Standards:** Highlights SOC 2 Type II, 256-bit AES encryption, and automated multi-entity reconciliation.
+- **Zero-Backend Static Export:** Runs 100% client-side with no server dependencies or database requirements.
+- **Automated CI/CD:** Ready-to-use GitHub Actions workflow (`.github/workflows/deploy.yml`) for one-click GitHub Pages hosting.
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **Framework:** [Next.js 16 (App Router)](https://nextjs.org/)
-- **UI & State:** [React 19](https://react.dev/)
+- **UI & Components:** [React 19](https://react.dev/), Radix UI Primitives, Lucide Icons
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Komponen:** Radix UI primitives & Lucide Icons
-- **Notifikasi:** Sonner
+- **Notifications:** Sonner
 - **Testing:** Playwright E2E
 
 ---
 
-## 💻 Panduan Instalasi Lokal
+## 💻 Local Development
 
-### Kebutuhan Sistem
+### Requirements
 
-- **Node.js:** Versi 20+
-- **pnpm:** Versi 10+ (atau gunakan `npm` / `yarn`)
+- **Node.js:** v20+
+- **pnpm:** v10+ (or `npm` / `yarn`)
 
-### Langkah-langkah
+### Steps
 
-1. **Pasang Dependensi:**
+1. **Install Dependencies:**
    ```bash
    pnpm install
    ```
 
-2. **Jalankan Server Development:**
+2. **Run Development Server:**
    ```bash
    pnpm dev
    ```
-   Buka browser di [http://localhost:3000](http://localhost:3000).
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-3. **Uji Build Static Export:**
+3. **Build Static Export:**
    ```bash
    pnpm run build
    ```
-   Hasil file HTML/CSS/JS statis akan dihasilkan di direktori `./out`.
+   Static HTML/CSS/JS assets will be generated in `./out`.
 
 ---
 
-## 🌐 Panduan Deploy ke GitHub Pages
+## 🌐 Deploying to GitHub Pages
 
-Repositori ini telah dilengkapi dengan alur otomatisasi **GitHub Actions** (`.github/workflows/deploy.yml`).
+This repository includes a turnkey **GitHub Actions** deployment pipeline:
 
-### Cara Mengaktifkan di GitHub:
-
-1. Buat repositori baru di GitHub dan lakukan push kode:
+1. **Push your code to GitHub:**
    ```bash
-   git init
    git add .
-   git commit -m "feat: initial commit for github pages deployment"
-   git branch -M main
-   git remote add origin https://github.com/<USERNAME>/<REPO_NAME>.git
-   git push -u origin main
+   git commit -m "feat: modern financial operations landing page"
+   git push origin main
    ```
 
-2. Buka halaman repositori di browser:
-   - Masuk ke tab **Settings** -> **Pages**.
-   - Pada bagian **Build and deployment** > **Source**, pilih opsi **GitHub Actions**.
+2. **Enable GitHub Pages:**
+   - Go to your repository on GitHub.
+   - Navigate to **Settings** > **Pages**.
+   - Under **Build and deployment > Source**, select **GitHub Actions**.
 
-3. Begitu Anda melakukan push ke branch `main`, GitHub Actions akan otomatis membangun website dan mempublikasikannya ke:
+3. GitHub Actions will automatically build and publish your site at:
    `https://<USERNAME>.github.io/<REPO_NAME>/`
-
-*(Catatan: Konfigurasi `next.config.ts` otomatis menyesuaikan `basePath` sesuai nama repositori GitHub).*
 
 ---
 
-## 📄 Lisensi
+## 📄 License
 
-Proyek ini dilisensikan di bawah lisensi MIT.
+Licensed under the MIT License.

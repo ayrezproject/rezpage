@@ -1,30 +1,50 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, ShieldCheck, FileEdit, RefreshCw } from 'lucide-react';
+import { ChevronDown, ShieldCheck, Database, CreditCard, Rocket } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
+import { useLanguage } from '@/lib/i18n-context';
 
 export function FaqSection() {
+  const { lang } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
     {
       icon: ShieldCheck,
-      question: 'Apakah format RPM ini sah dan sesuai standar pengawas/dinas?',
-      answer:
-        'Ya, 100% sah! Format mengacu pada struktur baku Kurikulum Merdeka berstandar matriks 54 baris × 15 kolom, mencakup Identitas Modul, Karakteristik Mapel, Profil Peserta Didik, Dimensi Profil Lulusan (DPL 1–8), Desain Pembelajaran Berdiferensiasi, Instrumen Asesmen, hingga Lembar Pengesahan tanda tangan Kepala Sekolah dan NIP.',
+      question: lang === 'id' 
+        ? 'Bagaimana Rezpage menghubungkan rekening bank tanpa mengekspos kredensial?' 
+        : 'How does Rezpage connect to bank accounts without exposing sensitive credentials?',
+      answer: lang === 'id'
+        ? 'Rezpage menggunakan token read-only terenkripsi via protokol Open Banking institusional berstandar SOC 2 Type II. Sandi atau token perbankan Anda tidak pernah disimpan di server kami dan tidak memiliki izin penarikan dana tanpa otorisasi bertingkat.'
+        : 'Rezpage establishes read-only cryptographic connections through institutional Open Banking APIs certified under SOC 2 Type II. Your bank login credentials never touch our servers, and programmatic withdrawals cannot be executed without explicit multi-party approval policies.',
     },
     {
-      icon: FileEdit,
-      question: 'Apakah hasil unduhan bisa diedit kembali di Microsoft Word?',
-      answer:
-        'Tentu saja! Berkas diunduh dalam format Microsoft Word (.docx) asli tanpa proteksi atau watermark yang mengunci. Anda bebas mengubah nama sekolah, menyesuaikan alur kegiatan, menambahkan logo KOP sekolah, atau membukanya di Microsoft Word, Google Docs, dan WPS Office.',
+      icon: Database,
+      question: lang === 'id'
+        ? 'Sistem ERP dan software akuntansi apa saja yang didukung secara natif?'
+        : 'Which ERPs and general ledger platforms are supported out of the box?',
+      answer: lang === 'id'
+        ? 'Rezpage memiliki integrasi dua arah instan dengan QuickBooks Online, NetSuite, Xero, Sage Intacct, dan SAP. Seluruh transaksi, pajak, dan kode departemen dipetakan secara otomatis dengan akurasi 99.98%.'
+        : 'Rezpage features native, bi-directional sync with NetSuite, QuickBooks Online, Xero, Sage Intacct, and SAP. All transaction metadata, tax codes, and department cost centers are mapped continuously with 99.98% reconciliation precision.',
     },
     {
-      icon: RefreshCw,
-      question: 'Bagaimana jika kuota atau masa aktif saya habis?',
-      answer:
-        'Anda dapat melakukan perpanjangan instan langsung melalui menu langganan via Mayar Payment Gateway. Pembayaran mendukung QRIS (semua e-wallet dan m-banking), Virtual Account, dan langsung aktif otomatis dalam 5–15 detik tanpa perlu konfirmasi manual.',
+      icon: CreditCard,
+      question: lang === 'id'
+        ? 'Dapatkah kami menerbitkan kartu korporat fisik & virtual dengan batas merchant?'
+        : 'Can we issue physical and virtual corporate cards with merchant-level restrictions?',
+      answer: lang === 'id'
+        ? 'Ya! Anda dapat menerbitkan kartu virtual tanpa batas dalam hitungan detik untuk langganan software atau karyawan baru. Anda dapat mengunci kartu ke merchant tertentu (misal hanya AWS atau Google Cloud) serta menetapkan batas kedaluwarsa otomatis.'
+        : 'Yes. You can generate unlimited virtual cards in seconds for specific vendors or project teams. Restrict spend by merchant category (e.g. cloud compute only), set monthly hard limits, and automatically freeze inactive cards.',
+    },
+    {
+      icon: Rocket,
+      question: lang === 'id'
+        ? 'Berapa lama waktu implementasi dan onboarding untuk uji coba 14 hari?'
+        : 'How fast can our finance team onboard during the 14-day free trial?',
+      answer: lang === 'id'
+        ? 'Kurang dari 5 menit. Tidak membutuhkan tim IT atau perubahan infrastruktur. Cukup tautkan akun pertama Anda, dan model prakiraan runway serta analitik kas langsung tersedia seketika.'
+        : 'Under 5 minutes. No custom engineering or IT setup is required. Connect your first primary banking feed, and your live treasury analytics and Monte Carlo runway models populate immediately.',
     },
   ];
 
@@ -38,13 +58,15 @@ export function FaqSection() {
         <ScrollReveal animation="fade-up">
           <div className="text-center mb-16">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#121316] text-[#c8f53a] text-xs font-bold mb-3">
-              Pertanyaan Umum
+              {lang === 'id' ? 'Pertanyaan Umum' : 'Frequently Asked Questions'}
             </span>
             <h2 className="text-feature-heading text-[#121316] mb-3">
-              Kerap Ditanyakan Guru & Sekolah
+              {lang === 'id' ? 'Pertanyaan yang Kerap Diajukan Tim Finansial' : 'Frequently Asked by Financial Leaders'}
             </h2>
             <p className="text-body-clean max-w-xl mx-auto">
-              Semua hal yang perlu Anda ketahui mengenai legalitas format, pengeditan berkas, dan sistem pembayaran.
+              {lang === 'id'
+                ? 'Semua hal yang perlu Anda ketahui mengenai integrasi bank, keamanan data, dan penerbitan kartu.'
+                : 'Everything you need to know about security, accounting compatibility, and institutional onboarding.'}
             </p>
           </div>
         </ScrollReveal>

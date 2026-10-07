@@ -1,16 +1,21 @@
 'use client';
 
-import { Sparkles, FileText, ArrowRight, PrinterCheck, MousePointerClick } from 'lucide-react';
+import { Sparkles, ArrowRight, MousePointerClick, ShieldCheck, Cpu } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
+import { useLanguage } from '@/lib/i18n-context';
 
 export function HowItWorks() {
+  const { lang } = useLanguage();
+
   const steps = [
     {
       step: '01',
-      title: 'Pilih Jenjang & Materi',
-      desc: 'Isi nama sekolah, pilih fase/kelas, tentukan bab materi ajar, atau cukup unggah dokumen bahan ajar PDF/Word Anda.',
-      time: 'Estimasi: 30 Detik',
-      icon: FileText,
+      title: lang === 'id' ? 'Hubungkan Bank & ERP' : 'Connect Banks & General Ledger',
+      desc: lang === 'id'
+        ? 'Tautkan rekening bank global dan software akuntansi (NetSuite, QuickBooks, Xero) dalam 2 menit via token read-only berstandar bank.'
+        : 'Link global banking feeds and accounting ERPs (NetSuite, QuickBooks, Xero) in 2 minutes using read-only institutional OAuth tokens.',
+      time: lang === 'id' ? 'Waktu: 2 Menit' : 'Setup: ~2 Minutes',
+      icon: ShieldCheck,
       cardStyle: 'bg-[#121316] text-white shadow-md',
       badgeStyle: 'bg-white/10 text-[#c8f53a]',
       iconStyle: 'bg-white/10 text-[#c8f53a]',
@@ -19,10 +24,12 @@ export function HowItWorks() {
     },
     {
       step: '02',
-      title: 'Klik "Generate AI"',
-      desc: 'Multi-LLM Engine memformulasikan capaian pembelajaran, diferensiasi 3 gaya belajar, dan asesmen dalam 15 detik.',
-      time: 'Estimasi: 15 Detik',
-      icon: Sparkles,
+      title: lang === 'id' ? 'Terapkan Aturan Belanja Otonom' : 'Configure Spend & Sweep Policies',
+      desc: lang === 'id'
+        ? 'Tetapkan limit kartu kredit divisi, persetujuan multi-level otomatis, dan aturan auto-sweep untuk mengoptimalkan imbal hasil treasury.'
+        : 'Establish dynamic card guardrails, tiered Slack approval routes, and automated idle liquidity sweeps to maximize interest yield.',
+      time: lang === 'id' ? 'Waktu: Instan' : 'Deployment: Instant',
+      icon: Cpu,
       cardStyle: 'bg-[#c8f53a] text-[#121316] shadow-md',
       badgeStyle: 'bg-[#121316] text-white',
       iconStyle: 'bg-black/10 text-[#121316]',
@@ -31,10 +38,12 @@ export function HowItWorks() {
     },
     {
       step: '03',
-      title: 'Download .docx & Print',
-      desc: 'Unduh dokumen Word format presisi F4 Folio 54 baris × 15 kolom, langsung tanda tangan dan siap diserahkan ke pengawas dinas.',
-      time: 'Estimasi: Instan',
-      icon: PrinterCheck,
+      title: lang === 'id' ? 'Kendalikan Kas & Runway Real-Time' : 'Unlock Real-Time Runway Clarity',
+      desc: lang === 'id'
+        ? 'Nikmati rekonsiliasi terus-menerus tanpa input manual, laporan dewan direksi instan, dan prediksi runway akurat.'
+        : 'Experience sub-second transaction coding, continuous book closing, and AI-modeled runway scenarios ready for your board of directors.',
+      time: lang === 'id' ? 'Waktu: Real-Time' : 'Telemetry: 24/7 Live',
+      icon: Sparkles,
       cardStyle: 'bg-white text-[#121316] border border-border shadow-xs',
       badgeStyle: 'bg-neutral-100 text-neutral-800',
       iconStyle: 'bg-neutral-100 text-[#121316]',
@@ -49,13 +58,15 @@ export function HowItWorks() {
         <ScrollReveal animation="fade-up">
           <div className="text-center mb-16">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#121316] text-[#c8f53a] text-xs font-bold mb-3">
-              Alur Penggunaan Praktis
+              {lang === 'id' ? 'Alur Implementasi' : 'Implementation Pipeline'}
             </span>
             <h2 className="text-feature-heading text-[#121316] mb-3">
-              Cara Kerja: Hanya 3 Langkah Mudah
+              {lang === 'id' ? 'Cara Kerja: 3 Langkah Menuju Finansial Otonom' : 'How It Works: 3 Steps to Financial Autonomy'}
             </h2>
             <p className="text-body-clean max-w-2xl mx-auto">
-              Dari input bab hingga lembar RPM baku F4 siap cetak, semuanya berjalan otomatis dan selesai dalam sekejap.
+              {lang === 'id'
+                ? 'Dari integrasi akun hingga laporan neraca audit siap pakai, tanpa merombak infrastruktur perbankan Anda.'
+                : 'From initial bank sync to audit-ready financials, without disrupting your daily operating accounts.'}
             </p>
           </div>
         </ScrollReveal>
@@ -110,14 +121,16 @@ export function HowItWorks() {
                 <MousePointerClick className="h-4 w-4" />
               </div>
               <p className="text-xs sm:text-sm font-semibold text-[#121316]">
-                Dokumen hasil dapat langsung dibuka di Microsoft Word, Google Docs, atau WPS Office tanpa konversi berbelit.
+                {lang === 'id'
+                  ? 'Kompatibel penuh dengan QuickBooks, NetSuite, Xero, Sage Intacct, dan SAP tanpa perlu coding tambahan.'
+                  : 'Native two-way sync with QuickBooks, NetSuite, Xero, Sage Intacct, and SAP out of the box.'}
               </p>
             </div>
             <a
               href="#pricing"
               className="btn-pill-obsidian text-xs py-2 px-4 shrink-0"
             >
-              Mulai Sekarang ➔
+              {lang === 'id' ? 'Mulai Uji Coba ➔' : 'Start Trial ➔'}
             </a>
           </div>
         </ScrollReveal>

@@ -11,7 +11,7 @@ import {
   Menu, 
   X, 
   ChevronRight, 
-  Zap,
+  Zap, 
   ArrowUpRight 
 } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n-context';
@@ -26,7 +26,7 @@ interface NavItem {
 }
 
 export function Navbar() {
-  const { t, lang } = useLanguage();
+  const { lang } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
@@ -87,33 +87,33 @@ export function Navbar() {
   const navItems: NavItem[] = [
     { 
       href: '#features', 
-      label: lang === 'id' ? 'Fitur AI' : 'Features', 
+      label: lang === 'id' ? 'Fitur Utama' : 'Features', 
       icon: Sparkles,
-      desc: lang === 'id' ? 'Generator Modul & Diferensiasi' : 'AI Generation Engine'
+      desc: lang === 'id' ? 'Treasury & Kontrol Belanja' : 'Treasury & Spend Controls'
     },
     { 
       href: '#problem-solution', 
       label: lang === 'id' ? 'Solusi' : 'Solution', 
       icon: ShieldCheck,
-      desc: lang === 'id' ? 'Bandingkan Manual vs Otomatis' : 'Traditional vs AI'
+      desc: lang === 'id' ? 'Spreadsheet vs Real-Time OS' : 'Manual vs Autonomous'
     },
     { 
       href: '#how-it-works', 
       label: lang === 'id' ? 'Cara Kerja' : 'Workflow', 
       icon: Layers,
-      desc: lang === 'id' ? '3 Langkah Cepat 15 Detik' : '3-Step Fast Setup'
+      desc: lang === 'id' ? 'Integrasi Bank & ERP 3 Menit' : '3-Minute Bank & ERP Sync'
     },
     { 
       href: '#specs', 
-      label: lang === 'id' ? 'Spesifikasi' : 'Specs', 
+      label: lang === 'id' ? 'Keamanan' : 'Security', 
       icon: FileText,
-      desc: lang === 'id' ? 'Format Folio F4 & Regulasi Kemendikbud' : 'F4 Standards & Word .docx'
+      desc: lang === 'id' ? 'SOC 2 & Enkripsi AES-256' : 'SOC 2 & Bank-Grade APIs'
     },
     { 
       href: '#pricing', 
-      label: t.pricing.title, 
+      label: lang === 'id' ? 'Biaya' : 'Pricing', 
       icon: Tag,
-      desc: lang === 'id' ? 'Paket Tahunan Unlimited' : 'Annual Full Access'
+      desc: lang === 'id' ? 'Skala Fleksibel Tanpa Markup' : 'Transparent Tiering'
     },
   ];
 
@@ -140,13 +140,12 @@ export function Navbar() {
           )}
         >
           <div className="flex items-center justify-between gap-2 sm:gap-4">
-            {/* Left: Brand Identity + Live Engine Status */}
             {/* Left: Brand Identity */}
             <div className="flex items-center gap-2.5">
               <Link 
                 href="/" 
                 className="flex items-center gap-2 group outline-none"
-                aria-label="Rezpage Beranda"
+                aria-label="Rezpage Home"
               >
                 {/* Modern Brand Mark Glyph */}
                 <div className="h-7 w-7 rounded-lg bg-[#121316] flex items-center justify-center text-[#c8f53a] shadow-xs group-hover:scale-105 group-hover:rotate-3 transition-transform">
@@ -163,7 +162,7 @@ export function Navbar() {
             {/* Center: Nav Items Capsule */}
             <nav 
               className="hidden md:flex items-center gap-1 rounded-full bg-neutral-100/90 p-1 border border-neutral-200/60 shadow-inner"
-              aria-label="Navigasi Utama"
+              aria-label="Main Navigation"
             >
               {navItems.map((item) => {
                 const isActive = activeSection === item.href.replace('#', '');
@@ -187,7 +186,7 @@ export function Navbar() {
               })}
             </nav>
 
-            {/* Right: Actions (Language + Mobile Toggle + High Energy CTA) */}
+            {/* Right: Actions (Language + High Energy CTA) */}
             <div className="flex items-center gap-2 sm:gap-2.5">
               <LanguageToggle />
 
@@ -197,7 +196,7 @@ export function Navbar() {
                 onClick={(e) => handleNavClick(e, '#pricing')}
                 className="group relative overflow-hidden btn-pill-lime text-xs font-extrabold py-1.5 sm:py-2 px-3.5 sm:px-4 shadow-sm flex items-center gap-1.5 hover:scale-[1.03] active:scale-[0.98] transition-all"
               >
-                <span className="tracking-tight">{lang === 'id' ? 'Beli Sekarang' : 'Get License'}</span>
+                <span className="tracking-tight">{lang === 'id' ? 'Mulai Sekarang' : 'Start Trial'}</span>
                 <span className="h-4 w-4 rounded-full bg-[#121316] text-[#c8f53a] flex items-center justify-center text-[10px] font-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
                   ↗
                 </span>
@@ -208,7 +207,7 @@ export function Navbar() {
                 type="button"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="md:hidden flex items-center justify-center h-8 w-8 rounded-full border border-neutral-200 bg-white hover:bg-neutral-50 text-[#121316] transition-all shadow-2xs"
-                aria-label={mobileOpen ? 'Tutup navigasi' : 'Buka navigasi'}
+                aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
                 aria-expanded={mobileOpen}
               >
                 {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -224,10 +223,10 @@ export function Navbar() {
             <div className="flex items-center justify-between px-3 py-2 rounded-2xl bg-[#121316] text-white">
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-[#c8f53a] animate-pulse" />
-                <span className="text-xs font-bold">RPM Generator AI v2.5</span>
+                <span className="text-xs font-bold">SOC 2 Type II Certified</span>
               </div>
               <span className="text-[10px] font-extrabold text-[#c8f53a] bg-white/10 px-2 py-0.5 rounded-full">
-                15 Detik
+                99.99% SLA
               </span>
             </div>
 
@@ -268,14 +267,14 @@ export function Navbar() {
             {/* Mobile Footer Action */}
             <div className="pt-2 border-t border-neutral-100 flex items-center justify-between gap-2">
               <div className="text-[11px] text-neutral-500">
-                Lisensi 1 Tahun: <strong className="text-[#121316]">Rp 100.000</strong>
+                Growth Plan: <strong className="text-[#121316]">$49 / mo</strong>
               </div>
               <a
                 href="#pricing"
                 onClick={(e) => handleNavClick(e, '#pricing')}
                 className="btn-pill-lime text-xs font-bold py-1.5 px-3 flex items-center gap-1 shadow-xs"
               >
-                <span>Beli Sekarang</span>
+                <span>{lang === 'id' ? 'Mulai Sekarang' : 'Start Trial'}</span>
                 <ArrowUpRight className="h-3 w-3" />
               </a>
             </div>

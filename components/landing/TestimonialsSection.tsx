@@ -2,38 +2,44 @@
 
 import { Star, Quote } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
+import { useLanguage } from '@/lib/i18n-context';
 
 export function TestimonialsSection() {
+  const { lang } = useLanguage();
+
   const testimonials = [
     {
-      name: 'Drs. I Wayan Sudarma',
-      role: 'Guru Fisika SMK Negeri',
-      location: 'Bali',
-      initials: 'WS',
+      name: 'Marcus Vance',
+      role: 'Chief Financial Officer',
+      location: 'Lumina Cloud (Series B)',
+      initials: 'MV',
       avatarBg: 'bg-[#121316] text-[#c8f53a]',
-      content:
-        'Dulu saya paling malas kalau sudah masuk awal semester, harus begadang berminggu-minggu buat format RPP/RPM. Sejak pakai RPM Generator AI, 1 bab selesai kurang dari 1 menit dan format tabelnya pas banget di kertas F4. Sangat membantu guru!',
-      highlight: 'Selesai Kurang Dari 1 Menit & Pas Kertas F4',
+      content: lang === 'id'
+        ? 'Rezpage mengeliminasi 8 hari lembur penutupan buku bulanan kami. Posisi kas multi-valuta kami kini terekonsiliasi otomatis setiap detik, dan laporan dewan direksi siap dalam hitungan menit.'
+        : 'Rezpage eliminated our 8-day month-end closing scramble. Our multi-currency cash positions reconcile continuously in real time, and our board audit decks are generated automatically without friction.',
+      highlight: lang === 'id' ? 'Tutup Buku Turun dari 8 Hari ke 4 Jam' : 'Closing Time Slashed from 8 Days to 4 Hours',
     },
     {
-      name: 'Siti Nurhaliza, M.Pd.',
-      role: 'Guru Bahasa Indonesia SMA Swasta',
-      location: 'Jawa Barat',
-      initials: 'SN',
+      name: 'Elena Rostova',
+      role: 'VP of Finance',
+      location: 'Hyperion Mobility (London)',
+      initials: 'ER',
       avatarBg: 'bg-[#c8f53a] text-[#121316]',
-      content:
-        'Fitur diferensiasinya luar biasa. Asesmen dan rancangan untuk murid visual, auditori, dan kinestetik langsung dijabarkan jelas. Waktu supervisi kepala sekolah, dokumen RPM saya langsung dapat nilai A.',
-      highlight: 'Dapat Nilai A Waktu Supervisi Kepala Sekolah',
+      content: lang === 'id'
+        ? 'Batas kartu korporat otonom berhasil menyelamatkan lebih dari $140.000 biaya langganan SaaS yang tidak sah hanya pada kuartal pertama. Transparansi belanja tim sangat luar biasa.'
+        : 'The autonomous corporate card guardrails saved us over $140,000 in rogue software subscriptions and unapproved SaaS charges in Q1 alone. Absolute peace of mind for our finance leadership.',
+      highlight: lang === 'id' ? 'Hemat $140k+ Pengeluaran SaaS Liar' : 'Saved $140k+ in Unauthorized SaaS Renewals',
     },
     {
-      name: 'Ahmad Fauzan, S.Pd.I',
-      role: 'Guru Madrasah Aliyah',
-      location: 'Jawa Timur',
-      initials: 'AF',
+      name: 'David Chen',
+      role: 'Head of Treasury',
+      location: 'Nexa Global (San Francisco)',
+      initials: 'DC',
       avatarBg: 'bg-neutral-800 text-white',
-      content:
-        'Proses pembayarannya cepat sekali pakai QRIS Mayar, langsung aktif tanpa ribet konfirmasi chat admin. Sangat profesional untuk sebuah platform buatan anak bangsa.',
-      highlight: 'Aktivasi QRIS Mayar Super Cepat & Otomatis',
+      content: lang === 'id'
+        ? 'Menghubungkan 5 bank operasional dan NetSuite memakan waktu kurang dari 10 menit. Model prediksi runway Monte Carlo sangat presisi dalam mengarungi dinamika pasar.'
+        : 'Connecting NetSuite and our 5 global operating bank accounts took under 10 minutes with zero downtime. The Monte Carlo runway forecasting is remarkably accurate for our leadership team.',
+      highlight: lang === 'id' ? 'Integrasi ERP Bersih dalam 10 Menit' : '10-Minute Seamless ERP Integration',
     },
   ];
 
@@ -43,13 +49,15 @@ export function TestimonialsSection() {
         <ScrollReveal animation="fade-up">
           <div className="text-center mb-16">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#121316] text-[#c8f53a] text-xs font-bold mb-3">
-              Bukti Nyata Kepuasan
+              {lang === 'id' ? 'Validasi Industri' : 'Executive Validation'}
             </span>
             <h2 className="text-feature-heading text-[#121316] mb-3">
-              Dipercaya Guru di Seluruh Indonesia
+              {lang === 'id' ? 'Dipercaya Pemimpin Keuangan Global' : 'Trusted by Modern Finance Leaders Worldwide'}
             </h2>
             <p className="text-body-clean max-w-xl mx-auto">
-              Dengar langsung pengalaman para pendidik yang berhasil memangkas jam lembur administrasi mereka.
+              {lang === 'id'
+                ? 'Dengarkan pengalaman nyata CFO dan VP Finance yang telah memodernisasi treasury dan pembukuan mereka.'
+                : 'See how scaling enterprises and tech companies maintain complete financial governance with Rezpage.'}
             </p>
           </div>
         </ScrollReveal>
