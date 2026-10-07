@@ -53,10 +53,6 @@ Built with Next.js 16 static export architecture, fully optimized for instant, z
    ```
    Static HTML/CSS/JS assets will be generated in `./out`.
 
----
-
-
----
 
 ## 📄 License
 
