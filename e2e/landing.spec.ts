@@ -20,10 +20,14 @@ test.describe("Rezpage Modern Landing Page - Bilingual Financial Operations Flow
     });
     await expect(ctaButton.first()).toBeVisible();
 
-    // Check Footer
+    // Check Footer & Author Attribution
     const footer = page.locator("footer");
     await expect(footer).toBeVisible();
     await expect(footer.getByText(/All rights reserved|Hak cipta dilindungi/i)).toBeVisible();
+    const authorCredit = page.locator("#developed-by-ayrez");
+    await expect(authorCredit).toBeVisible();
+    await expect(authorCredit).toContainText("Developed by");
+    await expect(authorCredit).toContainText("Ayrez");
   });
 
   test("2. Dynamic Language Toggle (ID <-> EN)", async ({ page }) => {

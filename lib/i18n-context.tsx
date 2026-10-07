@@ -35,7 +35,7 @@ export function LanguageProvider({
         // ignore
       }
     }
-    return 'id';
+    return 'en';
   });
 
   const toggle = () => {
