@@ -55,24 +55,6 @@ Built with Next.js 16 static export architecture, fully optimized for instant, z
 
 ---
 
-## 🌐 Deploying to GitHub Pages
-
-This repository includes a turnkey **GitHub Actions** deployment pipeline:
-
-1. **Push your code to GitHub:**
-   ```bash
-   git add .
-   git commit -m "feat: modern financial operations landing page"
-   git push origin main
-   ```
-
-2. **Enable GitHub Pages:**
-   - Go to your repository on GitHub.
-   - Navigate to **Settings** > **Pages**.
-   - Under **Build and deployment > Source**, select **GitHub Actions**.
-
-3. GitHub Actions will automatically build and publish your site at:
-   `https://<USERNAME>.github.io/<REPO_NAME>/`
 
 ---
 
