@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "download": "Download"
+  },
+  "hero": {
+    "tagline": "Solusi Aplikasi Berlangganan Untuk Kemudahan Anda",
+    "subtitle": "Koleksi aplikasi premium dirancang untuk meningkatkan produktivitas dan efisiensi Anda.",
+    "cta": "Lihat Aplikasi"
+  },
+  "apps": {
+    "title": "Aplikasi Kami",
+    "description": "Pilih aplikasi yang sesuai dengan kebutuhan Anda"
+  },
+  "pricing": {
+    "title": "Harga",
+    "monthly": "/bulan",
+    "free": "Gratis"
+  },
+  "footer": {
+    "copyright": "© {year} Rezpage. Semua hak dilindungi.",
+    "links": {
+      "terms": "Syarat & Ketentuan",
+      "privacy": "Kebijakan Privasi",
+      "contact": "Hubungi Kami"
+    }
+  },
+  "admin": {
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "dashboard": "Dashboard",
+    "applications": "Aplikasi",
+    "logout": "Logout",
+    "newApp": "Aplikasi Baru",
+    "edit": "Edit",
+    "delete": "Hapus",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "name": "Nama Aplikasi",
+    "description": "Deskripsi",
+    "features": "Fitur",
+    "price": "Harga (Rp)",
+    "iosUrl": "URL iOS",
+    "androidUrl": "URL Android",
+    "screenshot": "Screenshot",
+    "uploading": "Mengunggah...",
+    "success": "Berhasil disimpan",
+    "error": "Terjadi kesalahan",
+    "duplicateName": "Nama aplikasi sudah ada",
+    "invalidUrl": "URL tidak valid atau tidak dapat diakses"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "download": "Download"
+  },
+  "hero": {
+    "tagline": "Subscription App Solutions For Your Ease",
+    "subtitle": "A collection of premium applications designed to enhance your productivity and efficiency.",
+    "cta": "View Apps"
+  },
+  "apps": {
+    "title": "Our Applications",
+    "description": "Choose the app that suits your needs"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "monthly": "/month",
+    "free": "Free"
+  },
+  "footer": {
+    "copyright": "© {year} Rezpage. All rights reserved.",
+    "links": {
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "contact": "Contact Us"
+    }
+  },
+  "admin": {
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "dashboard": "Dashboard",
+    "applications": "Applications",
+    "logout": "Logout",
+    "newApp": "New Application",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "name": "Application Name",
+    "description": "Description",
+    "features": "Features",
+    "price": "Price (Rp)",
+    "iosUrl": "iOS URL",
+    "androidUrl": "Android URL",
+    "screenshot": "Screenshot",
+    "uploading": "Uploading...",
+    "success": "Successfully saved",
+    "error": "An error occurred",
+    "duplicateName": "Application name already exists",
+    "invalidUrl": "URL is invalid or unreachable"
+  }
+}
